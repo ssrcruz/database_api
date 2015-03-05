@@ -1,4 +1,6 @@
-class Repository
+class Repository < ActiveRecord::Base
+  belongs_to :repository_lists
+  # belongs_to :profile
   def initialize(content)
     @content = content
   end

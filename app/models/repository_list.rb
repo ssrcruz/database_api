@@ -1,6 +1,6 @@
-class RepositoryList
+class RepositoryList < ActiveRecord::Base
   attr_reader :repositories
-
+  has_many :repositories
   def initialize(username)
     results = HTTParty.get(
         "https://api.github.com/users/#{username}/repos?sort=updated",

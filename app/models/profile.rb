@@ -1,5 +1,5 @@
-class Profile
-
+class Profile < ActiveRecord::Base
+has_many :repositories
   def initialize(username)
     @content = HTTParty.get(
         "https://api.github.com/users/#{username}",

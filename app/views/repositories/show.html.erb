@@ -22,3 +22,16 @@
     <%= render "repo", :repo => repo %>
   <% end %>
 </div>
+
+<% Profile.find_recent.each do |p| %>
+  <%= p.username %>
+  <%= p.location %>
+  <%= p.company_name %>
+<% end %>
+
+<% cache(cache_key_for_profiles) do %>
+  Profiles:
+  <% Profile.all.each do |p| %>
+    <%= link_to p.username, profile_url(p) %>
+  <% end %>
+<% end %>

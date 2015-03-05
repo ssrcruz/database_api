@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'httparty'
-
+gem 'actionpack-action_caching'
 gem 'foundation-rails'
 
 gem "font-awesome-rails"
